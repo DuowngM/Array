@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Nhap 10 so: ");
+      let b = a.split(" ");
+      let max = b[0];
+      let count = 0;
+      let sum = 0;
+      let c = "";
+      for ( let j = 0; j< b.length; j++){
+        b[j]= Number(b[j]);
+      }
+      console.log(b);
+      for (let i = 0; i < b.length; i++) {
+        if ( b[i] > max) {
+          max = b[i];
+        }
+        sum += b[i];
+      }
+      let avg = sum /(b.length);
+      document.write(`Trung bình của mảng là: ${avg} <Br>`);
+      console.log(max);
+      for ( let k = 0; k < b.length ; k++){
+        if (max ==b[k]){
+            c += k + "," ;
+            count++;
+        }
+      }
+      document.write(`Só lớn nhất là: ${max},xuất hiện ${count} và ở vị trí ${c} `);
+    </script>
+  </body>
+</html>

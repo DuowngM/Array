@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = +prompt("Nhap 1 so: ");
+      let c = [1, 3, 5, 7, 8, 9, 10, 11];
+      let flag = true;
+      for (i = 0; i < c.length; i++) {
+        if (c[i] == a) {
+          flag = true;
+          break;
+        }
+      }
+      console.log(flag);
+      if (flag == true) {
+        document.write("1");
+      } else {
+        document.write("2");
+      }
+    </script>
+  </body>
+</html>

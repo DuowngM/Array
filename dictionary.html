@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Tiếng Ziệt: </label>
+    <input type="text" id="Vietnamese" /> <br>
+    <label for="">Eng lịt: &nbsp&nbsp&nbsp&nbsp&nbsp </label>
+    <input type="text" id="English" />
+    <button onclick="lookup()">Translate</button>
+    <script>
+      let dictionary = [
+        ["hello", "xin chao"],
+        ["world", "the gioi"],
+        ["computer", "may tinh"],
+        ["book", "sach"],
+        ["music", "am nhac"],
+        ["dog", "con cho"]
+      ];
+
+      function lookup() {
+        let vietnameseWord = document.getElementById("Vietnamese").value;
+        let englishWord = document.getElementById("English").value;
+        console.log(vietnameseWord);
+        console.log(englishWord);
+        if (vietnameseWord !== "" && englishWord === "") {  
+          for (let i = 0; i < dictionary.length; i++) {
+            if (dictionary[i][1] === vietnameseWord) {
+              document.getElementById("English").value = dictionary[i][0];
+              console.log("222222");
+              return;
+            }
+          }
+          document.getElementById("English").value =  
+            "Không tìm thấy từ trong từ điển";
+        } 
+        else if (vietnameseWord === "" && englishWord !== "") {
+          for (let j = 0; j < dictionary.length; j++) {
+            if (dictionary[j][0] === englishWord) {
+              document.getElementById("Vietnamese").value = dictionary[j][1];
+              console.log("33333333");
+              
+
+              return;
+            }
+          }
+          document.getElementById("Vietnamese").value ="Không tìm thấy từ trong từ điển";
+        }else {
+          for (let i = 0; i < dictionary.length; i++) {
+            if (dictionary[i][1] === vietnameseWord) {
+              document.getElementById("English").value = dictionary[i][0];
+              console.log("222222");
+              return;
+            }
+          }
+          document.getElementById("English").value =  
+            "Không tìm thấy từ trong từ điển";  
+        }
+      }
+
+    </script>
+  </body>
+</html>
